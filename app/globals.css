@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #102c3c;
+  --color-coral: #dd4b37;
+  --color-coral-dark: #c23f2d;
+  --radius-16: 16px;
+  --radius-24: 24px;
+
+  /* THÊM 2 DÒNG NÀY ĐỂ ĐỊNH NGHĨA ANIMATION LƯỚT SÁNG CHO CTA */
+  --animate-shimmer: shimmer 1.5s infinite;
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
