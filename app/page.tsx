@@ -3,6 +3,7 @@ import { ArrowRight, Check, Play, Sparkle, Star } from "../components/icons";
 import { CoursePreview } from "../components/course-preview";
 import { SiteHeader } from "../components/header/site-header";
 import { SiteFooter } from "../components/footer/site-footer";
+import { CourseCard } from "../components/coure_card/CourseCard";
 
 const points = [
   "Lộ trình từ N5 đến N2 rõ ràng, dễ theo",
@@ -16,9 +17,9 @@ export default function HomePage() {
 
       {/* 1. HERO SECTION */}
       <section className="relative pt-4 pb-[80px] md:pb-[120px] px-4">
-<div className="relative w-11/12 max-w-[1160px] mx-auto my-4 border-[3px] border-ink bg-white rounded-[24px] p-1.5 shadow-[6px_6px_0px_#1a2f3a]">
-  <SiteHeader variant="light" />
-</div>
+        <div className="relative w-11/12 max-w-[1160px] mx-auto my-4 border-[3px] border-ink bg-white rounded-[24px] p-1.5 shadow-[6px_6px_0px_#1a2f3a]">
+          <SiteHeader variant="light" />
+        </div>
         <div className="w-11/12 max-w-[1160px] mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center pt-8 relative z-10">
 
           {/* Hero Left Content */}
@@ -134,39 +135,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. JOURNEY SECTION (LỘ TRÌNH) */}
-      <section id="lo-trinh" className="py-12 px-4">
-        <div className="w-11/12 max-w-[1160px] mx-auto grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-10 items-start">
+{/* 3. UPDATED JOURNEY SECTION */}
+<section id="lo-trinh" className="py-20 px-4 bg-[#fcfaf7]">
+  <div className="w-11/12 max-w-[1160px] mx-auto">
+    <div className="text-center mb-16">
+      <span className="inline-block mb-4 text-ink text-xs font-black uppercase bg-[#ffcad4] border-2 border-ink px-3 py-1 rounded-lg shadow-[2px_2px_0px_#1a2f3a]">
+        LỘ TRÌNH HỌC TẬP
+      </span>
+      <h2 className="text-4xl md:text-5xl font-black text-ink">Chọn cấp độ phù hợp với bạn</h2>
+    </div>
 
-          <div className="w-full lg:sticky lg:top-8">
-            <span className="inline-block mb-4 text-ink text-xs font-black uppercase bg-[#fff0cd] border-2 border-ink px-2.5 py-1 rounded-lg shadow-[2px_2px_0px_#1a2f3a]">
-              LỘ TRÌNH CỦA BẠN
-            </span>
-            <h2 className="mt-0 mb-4 text-3xl md:text-4xl font-black tracking-tight leading-tight">
-              Mỗi mục tiêu đều có<br />một điểm khởi đầu.
-            </h2>
-            <p className="max-w-[420px] text-[#68777c] text-sm md:text-base font-bold mb-6">
-              Chọn đúng cấp độ, học đúng trọng tâm và từng bước tiến gần hơn tới Nhật Bản trong mơ.
-            </p>
-            <Link href="/dang-ky" className="inline-flex items-center gap-2 text-sm font-black text-coral hover:underline">
-              Tìm lớp phù hợp ngay <ArrowRight className="w-4 h-4 stroke-[3]" />
-            </Link>
-          </div>
-
-          {/* Cột hiển thị danh sách khóa học phong cách hộp thô mộc */}
-          <div className="w-full grid gap-5">
-            <div className="bg-white border-2 border-ink rounded-xl p-5 shadow-[4px_4px_0px_#1a2f3a] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#1a2f3a] transition-all">
-              <CoursePreview level="N5" title="Nền tảng tiếng Nhật" detail="Dành cho người mới bắt đầu" color="coral" lesson="Hiragana & Katakana" />
-            </div>
-            <div className="bg-white border-2 border-ink rounded-xl p-5 shadow-[4px_4px_0px_#1a2f3a] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#1a2f3a] transition-all">
-              <CoursePreview level="N4" title="Giao tiếp vững vàng" detail="Dành cho người đã biết nền tảng" color="gold" lesson="Mẫu câu thường ngày" />
-            </div>
-            <div className="bg-white border-2 border-ink rounded-xl p-5 shadow-[4px_4px_0px_#1a2f3a] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#1a2f3a] transition-all">
-              <CoursePreview level="N3" title="Bứt phá mục tiêu" detail="Sẵn sàng cho công việc & du học" color="blue" lesson="Đọc hiểu thực tế" />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <CourseCard 
+        level="SƠ CẤP N5"
+        title="Nhập môn tiếng Nhật"
+        description="Xây dựng nền tảng vững chắc, làm quen với bảng chữ cái và giao tiếp đơn giản."
+        features={["Hiragana & Katakana", "150 từ vựng cơ bản", "Hỗ trợ 1-1"]}
+        color="bg-coral"
+      />
+      <CourseCard 
+        level="SƠ CẤP N4"
+        title="Giao tiếp thực tế"
+        description="Mở rộng vốn từ và ngữ pháp để tự tin trò chuyện trong đời sống hàng ngày."
+        features={["Mẫu câu thông dụng", "Nghe hiểu chuyên sâu", "Luyện phản xạ"]}
+        color="bg-[#f1a43a]"
+      />
+      <CourseCard 
+        level="TRUNG CẤP N3"
+        title="Bứt phá sự nghiệp"
+        description="Đạt trình độ làm việc, du học và đọc hiểu tài liệu chuyên sâu."
+        features={["Đọc hiểu nâng cao", "Hán tự (Kanji)", "Luyện đề thi thực tế"]}
+        color="bg-[#4ba3be]"
+      />
+    </div>
+  </div>
+</section>
 
       {/* 4. METHOD SECTION */}
       <section id="phuong-phap" className="py-12 px-4">

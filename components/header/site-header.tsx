@@ -71,38 +71,17 @@ export function SiteHeader({ variant = "light" }: SiteHeaderProps) {
           <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-coral transition-all duration-200 group-hover:w-full" />
         </Link>
         
-        {/* Account Link */}
-        {accountName ? (
-          <Link 
-            href="/tai-khoan" 
-            className={`max-w-[140px] md:max-w-[200px] truncate transition-all duration-200 hover:translate-x-0.5 ${
-              isDark ? "text-[#b2c4c8] hover:text-white" : "text-[#627377] hover:text-ink"
-            }`}
-            title="Quản lý tài khoản"
-          >
-            Xin chào, <span className="text-coral font-black">{accountName}</span>
-          </Link>
-        ) : (
-          <Link 
-            href="/tai-khoan" 
-            className={`relative py-1 transition-colors group ${
-              isDark ? "text-[#b2c4c8] hover:text-white" : "text-[#627377] hover:text-ink"
-            }`}
-          >
-            Đăng nhập
-            <span className={`absolute bottom-0 left-0 w-0 h-[3px] transition-all duration-200 group-hover:w-full ${isDark ? "bg-white" : "bg-ink"}`} />
-          </Link>
-        )}
+
         
         <Link 
-          href="/dang-ky" 
+          href="/khoa-hoc" 
           className={`inline-flex items-center gap-1.5 border-2 border-ink rounded-xl px-4 py-2 md:px-5 md:py-2.5 text-[11px] md:text-xs font-black tracking-wide uppercase shadow-[3px_3px_0px_#1a2f3a] transition-all hover:translate-x-[-1px] hover:translate-y-[-1px] hover:shadow-[4px_4px_0px_#1a2f3a] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_#1a2f3a] ${
             isDark 
               ? "bg-[#227e57] text-white" 
               : "bg-[#227e57] text-white" 
           }`}
         >
-          <span>Bắt đầu ngay</span>
+          <span>Khoá Học</span>
           <ArrowRight className="w-3.5 h-3.5 stroke-[3]" />
         </Link>
 
