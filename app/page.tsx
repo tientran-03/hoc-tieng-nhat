@@ -149,21 +149,21 @@ export default function HomePage() {
       <CourseCard 
         level="SƠ CẤP N5"
         title="Nhập môn tiếng Nhật"
-        description="Xây dựng nền tảng vững chắc, làm quen với bảng chữ cái và giao tiếp đơn giản."
+        desc="Xây dựng nền tảng vững chắc, làm quen với bảng chữ cái và giao tiếp đơn giản."
         features={["Hiragana & Katakana", "150 từ vựng cơ bản", "Hỗ trợ 1-1"]}
         color="bg-coral"
       />
       <CourseCard 
         level="SƠ CẤP N4"
         title="Giao tiếp thực tế"
-        description="Mở rộng vốn từ và ngữ pháp để tự tin trò chuyện trong đời sống hàng ngày."
+        desc="Mở rộng vốn từ và ngữ pháp để tự tin trò chuyện trong đời sống hàng ngày."
         features={["Mẫu câu thông dụng", "Nghe hiểu chuyên sâu", "Luyện phản xạ"]}
         color="bg-[#f1a43a]"
       />
       <CourseCard 
         level="TRUNG CẤP N3"
         title="Bứt phá sự nghiệp"
-        description="Đạt trình độ làm việc, du học và đọc hiểu tài liệu chuyên sâu."
+        desc="Đạt trình độ làm việc, du học và đọc hiểu tài liệu chuyên sâu."
         features={["Đọc hiểu nâng cao", "Hán tự (Kanji)", "Luyện đề thi thực tế"]}
         color="bg-[#4ba3be]"
       />
