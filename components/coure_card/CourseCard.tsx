@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface CourseProps {
   level: string;
   title: string;
@@ -24,8 +26,11 @@ export const CourseCard = ({ level, title, desc, features, color }: CourseProps)
       ))}
     </ul>
 
-    <button className="w-full border-4 border-ink bg-coral text-white font-black py-3 rounded-2xl shadow-[4px_4px_0px_#1a2f3a] hover:bg-ink transition-colors">
+    <Link 
+      href="/khoa-hoc"
+      className="block w-full border-4 border-ink bg-coral text-white font-black py-3 rounded-2xl shadow-[4px_4px_0px_#1a2f3a] hover:bg-ink transition-colors text-center"
+    >
       Xem thêm
-    </button>
+    </Link>
   </div>
 );

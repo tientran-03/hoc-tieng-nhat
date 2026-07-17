@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getSupabaseBrowserClient } from "../../lib/supabase/client";
+import { getMessengerHref } from "../../lib/site-config";
 import { SiteLogo } from "../logo/site-logo";
 import { ArrowRight } from "../icons";
 
@@ -70,8 +71,18 @@ export function SiteHeader({ variant = "light" }: SiteHeaderProps) {
           Phương pháp
           <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-coral transition-all duration-200 group-hover:w-full" />
         </Link>
-        
 
+        <a
+          href={getMessengerHref()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`hidden sm:inline relative py-1 transition-colors group ${
+            isDark ? "text-white hover:text-coral" : "text-[#43575c] hover:text-coral"
+          }`}
+        >
+          Tư vấn
+          <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-coral transition-all duration-200 group-hover:w-full" />
+        </a>
         
         <Link 
           href="/khoa-hoc" 
