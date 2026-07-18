@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { ArrowRight, Play, Star } from "../icons";
-import { SiteHeader } from "../header/site-header";
 import { FadeIn } from "../motion_wrapper/motion-wrapper";
 
 export function HeroSection() {
   return (
-    <section className="relative pt-4 pb-20 md:pb-28 px-4 overflow-hidden">
+    <section className="relative pt-28 md:pt-32 pb-20 md:pb-28 px-4">
       {/* Decorative background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#ffcad4]/40 blur-3xl" />
@@ -24,13 +23,7 @@ export function HeroSection() {
         </span>
       </div>
 
-      <FadeIn>
-        <div className="sticky top-4 z-50 w-11/12 max-w-[1160px] mx-auto my-4 border-[3px] border-ink bg-white rounded-[24px] p-1.5 shadow-[6px_6px_0px_#1a2f3a]">
-          <SiteHeader variant="light" />
-        </div>
-      </FadeIn>
-
-      <div className="w-11/12 max-w-[1160px] mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center pt-6 md:pt-10 relative z-10">
+      <div className="w-11/12 max-w-[1160px] mx-auto grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center relative z-10">
         <FadeIn delay={0.1}>
           <div className="w-full">
             <div className="inline-flex items-center gap-2 mb-6 border-2 border-ink bg-[#fff0cd] rounded-full px-4 py-1.5 shadow-[2px_2px_0px_#1a2f3a]">

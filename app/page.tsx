@@ -1,6 +1,7 @@
 import { SiteFooter } from "../components/footer/site-footer";
 import { CtaSection } from "../components/home/CtaSection";
 import { HeroSection } from "../components/home/HeroSection";
+import { HomeHeader } from "../components/home/HomeHeader";
 import { JourneySection } from "../components/home/JourneySection";
 import { LearnHubSection } from "../components/home/LearnHubSection";
 import { MethodSection } from "../components/home/MethodSection";
@@ -65,6 +66,7 @@ export default async function HomePage() {
 
   return (
     <main className="min-h-screen bg-[#fffdf9] text-ink font-sans overflow-x-hidden selection:bg-coral/30">
+      <HomeHeader />
       <HeroSection />
       <StatsSection />
       <JourneySection />
