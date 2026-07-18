@@ -63,6 +63,16 @@ export function SiteHeader({ variant = "light" }: SiteHeaderProps) {
 
         {/* Menu Item: Phương pháp */}
         <Link 
+          href="/#hoc-thu" 
+          className={`relative py-1 transition-colors group ${
+            isDark ? "text-white hover:text-coral" : "text-[#43575c] hover:text-coral"
+          }`}
+        >
+          Học thử
+          <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-coral transition-all duration-200 group-hover:w-full" />
+        </Link>
+
+        <Link 
           href="/#phuong-phap" 
           className={`relative py-1 transition-colors group ${
             isDark ? "text-white hover:text-coral" : "text-[#43575c] hover:text-coral"

@@ -2,11 +2,10 @@ import { SiteFooter } from "../components/footer/site-footer";
 import { CtaSection } from "../components/home/CtaSection";
 import { HeroSection } from "../components/home/HeroSection";
 import { JourneySection } from "../components/home/JourneySection";
+import { LearnHubSection } from "../components/home/LearnHubSection";
 import { MethodSection } from "../components/home/MethodSection";
-import { PronunciationSection } from "../components/home/PronunciationSection";
 import { StatsSection } from "../components/home/StatsSection";
 import { TestimonialsSection } from "../components/home/TestimonialsSection";
-import { VideoSection } from "../components/home/VideoSection";
 import { WhyUsSection } from "../components/home/WhyUsSection";
 import { createClient } from "../utils/supabase/server";
 
@@ -57,42 +56,27 @@ export default async function HomePage() {
     console.error("Error loading sections:", e);
   }
 
+  const pronItems = dynamicSections.flatMap((s) => s.pronItems ?? []);
+  const videoItems = dynamicSections.flatMap((s) => s.videoItems ?? []);
+  const learnTitle =
+    dynamicSections.find((s) => s.section_type === "video" && s.title)?.title ??
+    dynamicSections.find((s) => s.section_type === "pronunciation" && s.title)?.title ??
+    "Học thử miễn phí";
+
   return (
     <main className="min-h-screen bg-[#fffdf9] text-ink font-sans overflow-x-hidden selection:bg-coral/30">
-      {/* 1. Hero — giới thiệu + CTA chính */}
       <HeroSection />
-
-      {/* 2. Social proof — số liệu tin cậy */}
       <StatsSection />
-
-      {/* 3. Lộ trình khóa học N5–N3 */}
       <JourneySection />
 
-      {/* 4. Section động từ Supabase (phát âm, video) */}
-      {dynamicSections.map((sec) => {
-        if (sec.section_type === "pronunciation" && sec.pronItems && sec.pronItems.length > 0) {
-          return (
-            <PronunciationSection key={sec.id} sectionTitle={sec.title} items={sec.pronItems} />
-          );
-        }
-        if (sec.section_type === "video" && sec.videoItems && sec.videoItems.length > 0) {
-          return <VideoSection key={sec.id} sectionTitle={sec.title} items={sec.videoItems} />;
-        }
-        return null;
-      })}
+      {(pronItems.length > 0 || videoItems.length > 0) && (
+        <LearnHubSection title={learnTitle} pronItems={pronItems} videoItems={videoItems} />
+      )}
 
-      {/* 5. Lý do chọn — 4 điểm mạnh */}
       <WhyUsSection />
-
-      {/* 6. Phương pháp học */}
       <MethodSection />
-
-      {/* 7. Testimonials — câu chuyện học viên */}
       <TestimonialsSection />
-
-      {/* 8. CTA cuối trang */}
       <CtaSection />
-
       <SiteFooter />
     </main>
   );
